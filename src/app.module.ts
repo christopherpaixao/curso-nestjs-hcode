@@ -1,3 +1,4 @@
+import { AuthModule } from './user/auth/auth.module';
 import { UserModule } from './user/user.module';
 import {
   MiddlewareConsumer,
@@ -10,7 +11,7 @@ import { AppService } from './app.service';
 import { UserIdCheckMiddleware } from './middlewares/user-id-check.middleware';
 
 @Module({
-  imports: [UserModule],
+  imports: [AuthModule, UserModule],
   controllers: [AppController],
   providers: [AppService],
 })

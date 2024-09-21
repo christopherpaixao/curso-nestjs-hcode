@@ -34,8 +34,8 @@ export class UserController {
 
   @Get(':id')
   async readOne(@ParamId() id) {
-    console.log({id});
-    
+    console.log({ id });
+
     return this.userService.show(id);
   }
 
@@ -45,10 +45,7 @@ export class UserController {
   }
 
   @Patch(':id')
-  async updatePartial(
-    @Body() data: UpdatePatchUserDTO,
-    @ParamId() id,
-  ) {
+  async updatePartial(@Body() data: UpdatePatchUserDTO, @ParamId() id) {
     return this.userService.updatePartial(id, data);
   }
 
